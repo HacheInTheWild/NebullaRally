@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9df0fef260a18ad48a1692790f43dba6
+  - enabled: 1
+    path: Assets/Scenes/PantallaPrincipal.unity
+    guid: ba9ba0d0a14312142a9e7409b2094f4c
+  - enabled: 1
+    path: Assets/Scenes/Opciones.unity
+    guid: 911b919242c352441a11288b93b3e128
+  - enabled: 1
+    path: Assets/Scenes/PartidaGuardada.unity
+    guid: 498b4e682259f0442b3694c0063769a1
+  - enabled: 1
+    path: Assets/Scenes/Casa.unity
+    guid: 6703ba393ef7fce4fb4a2c46f1962882
+  - enabled: 1
+    path: Assets/Scenes/Garaje.unity
+    guid: 10b06c59296aa0e49a48afdbda452919
+  - enabled: 1
+    path: Assets/Scenes/Circuitos.unity
+    guid: 7370a81b1013a4246840ac84788bc54e
+  - enabled: 1
+    path: "Assets/Scenes/Cafeter\xEDa.unity"
+    guid: 3cafca9a1ecf2054fb41eced8e52d4fd
   m_configObjects: {}
