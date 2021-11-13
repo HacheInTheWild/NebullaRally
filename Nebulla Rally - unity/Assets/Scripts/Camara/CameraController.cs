@@ -42,7 +42,6 @@ public class CameraController : MonoBehaviour
         combined.GetColumn(1)
         );
 
-
         Quaternion wantedRotation = rotation;
         Quaternion currentRotation = transform.rotation;
 

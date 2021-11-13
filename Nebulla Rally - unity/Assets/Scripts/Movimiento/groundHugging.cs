@@ -19,6 +19,9 @@ public class groundHugging : MonoBehaviour
     private float turboSpeed = 15.0f;
     private float brakeSpeed = 20.0f;
 
+    Vector3 angVel;
+    Vector3 shipRot;
+
 
     //public Vector3 cameraOffset; //I use (0,1,-3)
 
@@ -47,11 +50,11 @@ public class groundHugging : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                rotationAmount = Input.GetAxis("Horizontal") * 50.0f;
+                rotationAmount = Input.GetAxis("Horizontal") * 30.0f;
                 rotationAmount *= Time.deltaTime;
                 carModel.transform.Rotate(0.0f, rotationAmount, 0.0f);
             }
-            rotationAmount = Input.GetAxis("Horizontal") * 30.0f;
+            rotationAmount = Input.GetAxis("Horizontal") * 10.0f;
             rotationAmount *= Time.deltaTime;
             carModel.transform.Rotate(0.0f, rotationAmount, 0.0f);
         }
@@ -82,6 +85,42 @@ public class groundHugging : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && speed > minSpeed)
         {
             speed -= brakeSpeed * Time.fixedDeltaTime;
+        }
+
+        //tilt
+        if(speed > minSpeed) { 
+            shipRot = transform.GetChild(0).localEulerAngles;
+    
+            if (shipRot.x > 180) shipRot.x -= 360;
+            if (shipRot.y > 180) shipRot.y -= 360;
+            if (shipRot.z > 180) shipRot.z -= 360;
+
+            float turn = Input.GetAxis("Horizontal") * Mathf.Abs(Input.GetAxis("Horizontal")) * Time.fixedDeltaTime; ;
+            angVel.y += turn * .05f;
+            angVel.z -= turn * .05f;
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                angVel.y += 5;
+                angVel.z += 20;
+                //speed -= 5 * Time.fixedDeltaTime;
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                angVel.y -= 5;
+                angVel.z -= 20;
+                //speed -= 5 * Time.fixedDeltaTime;
+            }
+
+            angVel -= angVel.normalized * angVel.sqrMagnitude * 0.9f * Time.fixedDeltaTime;
+
+            transform.GetChild(0).Rotate(angVel * Time.fixedDeltaTime);
+
+            Vector3 repos = -shipRot.normalized * .015f * (shipRot.sqrMagnitude + 500) * (1 + speed / maxSpeed) * Time.fixedDeltaTime;
+            repos.y = rotationAmount;
+
+            transform.GetChild(0).Rotate(repos);
         }
 
     }
