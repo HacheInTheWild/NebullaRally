@@ -21,15 +21,14 @@ public class prueba2 : MonoBehaviour
 
     void Start()
     {
-        speed = 0;
+        speed = cruiseSpeed;
     }
 
     void FixedUpdate()
     {
-
         //ANGULAR DYNAMICS//
 
-        shipRot = this.gameObject.transform.GetChild(0).localEulerAngles; //make sure you're getting the right child (the ship).  I don't know how they're numbered in general.
+        shipRot = transform.GetChild(0).localEulerAngles; //make sure you're getting the right child (the ship).  I don't know how they're numbered in general.
 
         //since angles are only stored (0,360), convert to +- 180
         if (shipRot.x > 180) shipRot.x -= 360;
@@ -38,7 +37,7 @@ public class prueba2 : MonoBehaviour
 
         //vertical stick adds to the pitch velocity
         //         (*************************** this *******************************) is a nice way to get the square without losing the sign of the value
-        angVel.x += Input.GetAxis("Vertical") * Mathf.Abs(Input.GetAxis("Vertical")) * sensitivity * Time.fixedDeltaTime;
+        //angVel.x += Input.GetAxis("Vertical") * Mathf.Abs(Input.GetAxis("Vertical")) * sensitivity * Time.fixedDeltaTime;
 
         //horizontal stick adds to the roll and yaw velocity... also thanks to the .5 you can't turn as fast/far sideways as you can pull up/down
         float turn = Input.GetAxis("Horizontal") * Mathf.Abs(Input.GetAxis("Horizontal")) * sensitivity * Time.fixedDeltaTime;
@@ -48,17 +47,17 @@ public class prueba2 : MonoBehaviour
 
         //shoulder buttons add to the roll and yaw.  No deltatime here for a quick response
         //comment out the .y parts if you don't want to turn when you hit them
-        if (Input.GetKey(KeyCode.Joystick1Button4) || Input.GetKey(KeyCode.A))
-        {
-            angVel.y -= 20;
-            angVel.z -= 50;
-            speed -= 5 * Time.fixedDeltaTime;
-        }
-
-        if (Input.GetKey(KeyCode.Joystick1Button5) || Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.Joystick1Button4) || Input.GetKey(KeyCode.I))
         {
             angVel.y += 20;
             angVel.z += 50;
+            speed -= 5 * Time.fixedDeltaTime;
+        }
+
+        if (Input.GetKey(KeyCode.Joystick1Button5) || Input.GetKey(KeyCode.O))
+        {
+            angVel.y -= 20;
+            angVel.z -= 50;
             speed -= 5 * Time.fixedDeltaTime;
         }
 
@@ -72,12 +71,12 @@ public class prueba2 : MonoBehaviour
 
 
         //and finally rotate.  
-        this.gameObject.transform.GetChild(0).Rotate(angVel * Time.fixedDeltaTime);
+        transform.GetChild(0).Rotate(angVel * Time.fixedDeltaTime);
 
         //this limits your rotation, as well as gradually realigns you.  It's a little convoluted, but it's
         //got the same square magnitude functionality as the angular velocity, plus a constant since x^2
         //is very small when x is small.  Also realigns faster based on speed.  feel free to tweak
-        this.gameObject.transform.GetChild(0).Rotate(-shipRot.normalized * .015f * (shipRot.sqrMagnitude + 500) * (1 + speed / maxSpeed) * Time.fixedDeltaTime);
+        transform.GetChild(0).Rotate(-shipRot.normalized * .015f * (shipRot.sqrMagnitude + 500) * (1 + speed / maxSpeed) * Time.fixedDeltaTime);
 
 
         //LINEAR DYNAMICS//
@@ -90,7 +89,7 @@ public class prueba2 : MonoBehaviour
         accel = maxSpeed - speed;
 
         //simple accelerations
-        if (Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.Joystick1Button1) || Input.GetKey(KeyCode.LeftShift))
             speed += accel * Time.fixedDeltaTime;
         else if (Input.GetKey(KeyCode.Joystick1Button0) || Input.GetKey(KeyCode.Space))
             speed -= decel * Time.fixedDeltaTime;
@@ -103,7 +102,7 @@ public class prueba2 : MonoBehaviour
 
         //moves camera (make sure you're GetChild()ing the camera's index)
         //I don't mind directly connecting this to the speed of the ship, because that always changes smoothly
-        this.gameObject.transform.GetChild(0).localPosition = cameraOffset + new Vector3(0, 0, -deltaSpeed * .02f);
+        transform.GetChild(0).localPosition = cameraOffset + new Vector3(0, 0, -deltaSpeed * .02f);
 
 
         float sqrOffset = transform.GetChild(0).localPosition.sqrMagnitude;
@@ -112,12 +111,13 @@ public class prueba2 : MonoBehaviour
 
         //this takes care of realigning after collisions, where the ship gets displaced due to its rigidbody.
         //I'm pretty sure this is the best way to do it (have the ship and the rig move toward their mutual center)
-        this.gameObject.transform.GetChild(0).Translate(-offsetDir * sqrOffset * 20 * Time.fixedDeltaTime);
+        transform.GetChild(0).Translate(-offsetDir * sqrOffset * 20 * Time.fixedDeltaTime);
         //(**************** this ***************) is what actually makes the whole ship move through the world!
-        this.gameObject.transform.Translate((offsetDir * sqrOffset * 50 + transform.GetChild(0).forward * speed) * Time.fixedDeltaTime, Space.World);
+        transform.Translate((offsetDir * sqrOffset * 50 + transform.GetChild(0).forward * speed) * Time.fixedDeltaTime, Space.World);
 
         //comment this out for starfox, remove the x and z components for shadows of the empire, and leave the whole thing for free roam
-        //this.gameObject.transform.Rotate(shipRot.x * Time.fixedDeltaTime, (shipRot.y * Mathf.Abs(shipRot.y) * .02f) * Time.fixedDeltaTime, shipRot.z * Time.fixedDeltaTime);
+        //transform.Rotate(shipRot.x * Time.fixedDeltaTime, (shipRot.y * Mathf.Abs(shipRot.y) * .02f) * Time.fixedDeltaTime, shipRot.z * Time.fixedDeltaTime);
+            
     }
 
     void Update()
