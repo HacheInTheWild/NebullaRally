@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class partidas_manage : MonoBehaviour
+public class Cafetería : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -17,14 +17,8 @@ public class partidas_manage : MonoBehaviour
         
     }
 
-    public void EscenaNuevaPartida()
+    public void VolverEscena()
     {
         SceneManager.LoadScene("PantallaPrincipal");
     }
-
-    public void VolverEscena()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
 }

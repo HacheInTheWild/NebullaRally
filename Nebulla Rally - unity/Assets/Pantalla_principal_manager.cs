@@ -36,4 +36,9 @@ public class Pantalla_principal_manager : MonoBehaviour
     {
         SceneManager.LoadScene("Circuitos");
     }
+
+    public void VolverEscena()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
