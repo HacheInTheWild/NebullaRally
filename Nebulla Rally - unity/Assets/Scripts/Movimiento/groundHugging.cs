@@ -11,8 +11,13 @@ public class groundHugging : MonoBehaviour
     private float terrainHeight;
     private float rotationAmount;
     private RaycastHit hit;
+    private RaycastHit hit2;
+    private RaycastHit hit3;
+    private RaycastHit hit4;
     private Vector3 pos;
     private Vector3 forwardDirection;
+
+    public LayerMask layer;
 
     private float maxSpeed = 150.0f;
     private float minSpeed = 0.0f;
@@ -21,9 +26,6 @@ public class groundHugging : MonoBehaviour
 
     Vector3 angVel;
     Vector3 shipRot;
-
-
-    //public Vector3 cameraOffset; //I use (0,1,-3)
 
     float deltaSpeed;
 
@@ -35,16 +37,31 @@ public class groundHugging : MonoBehaviour
     void Update()
     {
         // Keep at specific height above terrain
-        pos = transform.position;
-        float terrainHeight = Terrain.activeTerrain.SampleHeight(pos);
-        transform.position = new Vector3(pos.x,
-                                         terrainHeight + hoverHeight,
-                                         pos.z);
+        //pos = transform.position;
+        //float terrainHeight = Terrain.activeTerrain.SampleHeight(pos);
+        //transform.position = new Vector3(pos.x, terrainHeight + hoverHeight, pos.z);
 
         // Rotate to align with terrain
-        Physics.Raycast(raycastPoint.position, Vector3.down, out hit);
-        transform.up -= (transform.up - hit.normal) * 0.1f;
+        if (Physics.Raycast(carModel.transform.position + new Vector3(0.5f, 0, 0.5f), -this.transform.up, out hit, Mathf.Infinity, layer))
+        {
+            Physics.Raycast(carModel.transform.position + new Vector3(-0.5f, 0, -5.5f), -this.transform.up, out hit2, Mathf.Infinity, layer);
+            Physics.Raycast(carModel.transform.position + new Vector3(-0.5f, 0, 0.5f), -this.transform.up, out hit3, Mathf.Infinity, layer);
+            Physics.Raycast(carModel.transform.position + new Vector3(0.5f, 0, -5.5f), -this.transform.up, out hit4, Mathf.Infinity, layer);
 
+            Debug.DrawRay(carModel.transform.position + new Vector3(0.5f, 0, 0.5f), -this.transform.up * hit.distance, Color.red);
+            Debug.DrawRay(carModel.transform.position + new Vector3(0.5f, 0, -5.5f), -this.transform.up * hit2.distance, Color.red);
+            Debug.DrawRay(carModel.transform.position + new Vector3(-0.5f, 0, -5.5f), -this.transform.up * hit2.distance, Color.red);
+            Debug.DrawRay(carModel.transform.position + new Vector3(-0.5f, 0, 0.5f), -this.transform.up * hit2.distance, Color.red);
+
+            Vector3 newUp = (hit.normal + hit2.normal + hit3.normal + hit4.normal).normalized;
+
+            transform.up -= (transform.up - newUp) * 0.2f;
+        }
+        else
+        {
+            Debug.DrawRay(carModel.transform.position, Vector3.down * 10, Color.blue);
+        }
+        
         // Rotate with input
         if (speed > minSpeed)
         {
@@ -96,8 +113,8 @@ public class groundHugging : MonoBehaviour
             if (shipRot.z > 180) shipRot.z -= 360;
 
             float turn = Input.GetAxis("Horizontal") * Mathf.Abs(Input.GetAxis("Horizontal")) * Time.fixedDeltaTime; ;
-            angVel.y += turn * .05f;
-            angVel.z -= turn * .05f;
+            angVel.y += turn * .5f;
+            angVel.z -= turn * .5f;
 
             if (Input.GetKey(KeyCode.D))
             {
@@ -113,7 +130,7 @@ public class groundHugging : MonoBehaviour
                 //speed -= 5 * Time.fixedDeltaTime;
             }
 
-            angVel -= angVel.normalized * angVel.sqrMagnitude * 0.9f * Time.fixedDeltaTime;
+            angVel -= angVel.normalized * angVel.sqrMagnitude * 0.65f * Time.fixedDeltaTime;
 
             transform.GetChild(0).Rotate(angVel * Time.fixedDeltaTime);
 
@@ -122,19 +139,6 @@ public class groundHugging : MonoBehaviour
 
             transform.GetChild(0).Rotate(repos);
         }
-
     }
-
-    /*void FixedUpdate()
-    {
-        deltaSpeed = speed;
-        //moves camera (make sure you're GetChild()ing the camera's index)
-        //I don't mind directly connecting this to the speed of the ship, because that always changes smoothly
-        this.gameObject.transform.GetChild(1).localPosition = cameraOffset + new Vector3(0, 0, -deltaSpeed * .001f);
-
-
-        float sqrOffset = transform.GetChild(1).localPosition.sqrMagnitude;
-        Vector3 offsetDir = transform.GetChild(1).localPosition.normalized;
-    }*/
-
+    
 }

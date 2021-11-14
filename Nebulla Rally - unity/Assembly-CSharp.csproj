@@ -48,10 +48,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Movimiento\groundHugging.cs" />
-     <Compile Include="Assets\Scripts\Movimiento\shipTilting.cs" />
      <Compile Include="Assets\Scripts\Camara\CameraController.cs" />
-     <Compile Include="Assets\Scripts\Movimiento\pruebaMov.cs" />
-     <Compile Include="Assets\Scripts\Movimiento\prueba2.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

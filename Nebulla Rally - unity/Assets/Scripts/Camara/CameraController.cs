@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         if (!target)
             return;
 
-        Vector3 followpos = new Vector3(4.0f, height, 16.0f);
+        Vector3 followpos = new Vector3(0.0f, height, 16.0f);
         Quaternion lookrotation = Quaternion.identity;
 
         lookrotation.eulerAngles = new Vector3(22.0f, 180.0f, 0.0f);
