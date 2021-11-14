@@ -29,29 +29,36 @@ public class groundHugging : MonoBehaviour
 
     float deltaSpeed;
 
+    Quaternion currentState;
+
     void Start()
     {
-
+        currentState = Quaternion.identity;
     }
 
     void Update()
     {
-        // Keep at specific height above terrain
-        //pos = transform.position;
-        //float terrainHeight = Terrain.activeTerrain.SampleHeight(pos);
-        //transform.position = new Vector3(pos.x, terrainHeight + hoverHeight, pos.z);
 
         // Rotate to align with terrain
-        if (Physics.Raycast(carModel.transform.position + new Vector3(0.5f, 0, 0.5f), -this.transform.up, out hit, Mathf.Infinity, layer))
+        /*if (Physics.Raycast(transform.position + new Vector3(0, 0, 0), -transform.up, out hit, Mathf.Infinity, layer))
         {
-            Physics.Raycast(carModel.transform.position + new Vector3(-0.5f, 0, -5.5f), -this.transform.up, out hit2, Mathf.Infinity, layer);
-            Physics.Raycast(carModel.transform.position + new Vector3(-0.5f, 0, 0.5f), -this.transform.up, out hit3, Mathf.Infinity, layer);
-            Physics.Raycast(carModel.transform.position + new Vector3(0.5f, 0, -5.5f), -this.transform.up, out hit4, Mathf.Infinity, layer);
+            Debug.DrawRay(transform.position + new Vector3(0, 0, 0), -transform.up * hit.distance, Color.red);
+            
+            Vector3 newUp = (hit.normal).normalized;
 
-            Debug.DrawRay(carModel.transform.position + new Vector3(0.5f, 0, 0.5f), -this.transform.up * hit.distance, Color.red);
-            Debug.DrawRay(carModel.transform.position + new Vector3(0.5f, 0, -5.5f), -this.transform.up * hit2.distance, Color.red);
-            Debug.DrawRay(carModel.transform.position + new Vector3(-0.5f, 0, -5.5f), -this.transform.up * hit2.distance, Color.red);
-            Debug.DrawRay(carModel.transform.position + new Vector3(-0.5f, 0, 0.5f), -this.transform.up * hit2.distance, Color.red);
+            transform.up -= (transform.up - newUp) * 0.2f;
+        }*/
+
+        if (Physics.Raycast(transform.position + new Vector3(0.2f, 0, 0.2f), -transform.up, out hit, Mathf.Infinity, layer))
+        {
+            Physics.Raycast(transform.position + new Vector3(-0.2f, 0, -2.2f), -transform.up, out hit2, Mathf.Infinity, layer);
+            Physics.Raycast(transform.position + new Vector3(-0.2f, 0, 0.2f), -transform.up, out hit3, Mathf.Infinity, layer);
+            Physics.Raycast(transform.position + new Vector3(0.2f, 0, -2.2f), -transform.up, out hit4, Mathf.Infinity, layer);
+
+            Debug.DrawRay(transform.position + new Vector3(0.2f, 0, 0.2f), -transform.up * hit.distance, Color.red);
+            Debug.DrawRay(transform.position + new Vector3(-0.2f, 0, -2.2f), -transform.up * hit2.distance, Color.red);
+            Debug.DrawRay(transform.position + new Vector3(-0.2f, 0, 0.2f), -transform.up * hit3.distance, Color.red);
+            Debug.DrawRay(transform.position + new Vector3(0.2f, 0, -2.2f), -transform.up * hit4.distance, Color.red);
 
             Vector3 newUp = (hit.normal + hit2.normal + hit3.normal + hit4.normal).normalized;
 
@@ -59,7 +66,7 @@ public class groundHugging : MonoBehaviour
         }
         else
         {
-            Debug.DrawRay(carModel.transform.position, Vector3.down * 10, Color.blue);
+            Debug.DrawRay(transform.position, -carModel.transform.up * 10, Color.blue);
         }
         
         // Rotate with input
@@ -69,10 +76,12 @@ public class groundHugging : MonoBehaviour
             {
                 rotationAmount = Input.GetAxis("Horizontal") * 30.0f;
                 rotationAmount *= Time.deltaTime;
+                transform.Rotate(0.0f, rotationAmount, 0.0f);
                 carModel.transform.Rotate(0.0f, rotationAmount, 0.0f);
             }
             rotationAmount = Input.GetAxis("Horizontal") * 10.0f;
             rotationAmount *= Time.deltaTime;
+            transform.Rotate(0.0f, rotationAmount, 0.0f);
             carModel.transform.Rotate(0.0f, rotationAmount, 0.0f);
         }
 
