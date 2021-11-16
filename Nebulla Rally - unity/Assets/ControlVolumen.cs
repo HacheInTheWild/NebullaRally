@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Opciones : MonoBehaviour
+public class ControlVolumen : MonoBehaviour
 {
     public Slider slider;
     public float sliderValor;
@@ -23,11 +22,6 @@ public class Opciones : MonoBehaviour
         
     }
 
-    public void VolverEscena()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
     public void ChangeSlider(float valor)
     {
         sliderValor = valor;
@@ -38,7 +32,7 @@ public class Opciones : MonoBehaviour
 
     public void MuteOn()
     {
-        if (sliderValor == 0)
+        if(sliderValor == 0)
         {
             imagenMute.enabled = true;
         }
