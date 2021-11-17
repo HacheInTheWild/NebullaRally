@@ -25,9 +25,12 @@ public class groundHugging : MonoBehaviour
     Vector3 shipRot;
 
     float deltaSpeed;
+    Rigidbody Rigid;
+    float force;
 
     void Start()
     {
+        Rigid = GetComponentInChildren<Rigidbody>();
     }
 
     void Update()
@@ -35,6 +38,7 @@ public class groundHugging : MonoBehaviour
         // Rotate to align with terrain
         if (Physics.Raycast(transform.position + new Vector3(0.5f, 0, 0.5f), -transform.up, out hit, Mathf.Infinity, layer))
         {
+            force = 0f;
             Physics.Raycast(transform.position + new Vector3(-0.5f, 0, -5.5f), -transform.up, out hit2, Mathf.Infinity, layer);
             Physics.Raycast(transform.position + new Vector3(-0.5f, 0, 0.5f), -transform.up, out hit3, Mathf.Infinity, layer);
             Physics.Raycast(transform.position + new Vector3(0.5f, 0, -5.5f), -transform.up, out hit4, Mathf.Infinity, layer);
@@ -42,11 +46,18 @@ public class groundHugging : MonoBehaviour
             Vector3 newUp = (hit.normal + hit2.normal + hit3.normal + hit4.normal).normalized;
 
             transform.up -= (transform.up - newUp) * 0.2f;
+            //transform.position = Vector3.Lerp(transform.position, newUp, 1f);
 
             Debug.DrawRay(transform.position, -transform.up - (newUp * 10f), Color.red);
+        }
+        else
+        {
+            force = 1f;
+            Rigid.AddForce((-transform.up * force), ForceMode.Impulse);
+            Debug.DrawRay(transform.position, -transform.up * 10f, Color.blue);
 
         }
-        
+
         // Rotate with input
         if (speed > minSpeed)
         {
@@ -95,12 +106,12 @@ public class groundHugging : MonoBehaviour
     void shipRotation()
     {
         float turnDirection = -Input.GetAxis("Horizontal");
-        rotationAmount = turnDirection * 10.0f * Time.deltaTime;
+        rotationAmount = turnDirection * Time.deltaTime;
         transform.Rotate(0.0f, rotationAmount, 0.0f);
 
         if (Input.GetKey(KeyCode.Space))
         {
-            rotationAmount = turnDirection * 30.0f * Time.deltaTime;
+            rotationAmount = turnDirection * Time.deltaTime;
             transform.Rotate(0.0f, rotationAmount, 0.0f);
         }
     }
