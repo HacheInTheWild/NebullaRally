@@ -36,12 +36,12 @@ public class groundHugging : MonoBehaviour
     void Update()
     {
         // Rotate to align with terrain
-        if (Physics.Raycast(transform.position + new Vector3(0.5f, 0, 0.5f), -transform.up, out hit, Mathf.Infinity, layer))
+        if (Physics.Raycast(transform.position + new Vector3(0.5f, 0, 0.5f), -transform.up, out hit, 20f, layer))
         {
             force = 0f;
-            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, -5.5f), -transform.up, out hit2, Mathf.Infinity, layer);
-            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, 0.5f), -transform.up, out hit3, Mathf.Infinity, layer);
-            Physics.Raycast(transform.position + new Vector3(0.5f, 0, -5.5f), -transform.up, out hit4, Mathf.Infinity, layer);
+            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, -5.5f), -transform.up, out hit2, 20f, layer);
+            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, 0.5f), -transform.up, out hit3, 20f, layer);
+            Physics.Raycast(transform.position + new Vector3(0.5f, 0, -5.5f), -transform.up, out hit4, 20f, layer);
 
             Vector3 newUp = (hit.normal + hit2.normal + hit3.normal + hit4.normal).normalized;
 
@@ -52,8 +52,9 @@ public class groundHugging : MonoBehaviour
         }
         else
         {
-            force = 1f;
-            Rigid.AddForce((-transform.up * force), ForceMode.Impulse);
+            /*force = 1f;
+            Rigid.AddForce((-transform.up * force), ForceMode.Impulse);*/
+            transform.position -= transform.up * 0.1f;
             Debug.DrawRay(transform.position, -transform.up * 10f, Color.blue);
 
         }
@@ -73,7 +74,7 @@ public class groundHugging : MonoBehaviour
         else if(speed > minSpeed)
         {
             speed -= 10.0f * Time.fixedDeltaTime;
-            forwardDirection = transform.forward;
+            forwardDirection = carModel.transform.forward;
             transform.position -= forwardDirection * Time.deltaTime * speed;
         }
         
