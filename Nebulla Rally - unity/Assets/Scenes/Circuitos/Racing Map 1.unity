@@ -1170,6 +1170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052146262032801913}
   - component: {fileID: 419443757122337476}
+  - component: {fileID: 419443757122337477}
   m_Layer: 0
   m_Name: navesam
   m_TagString: Untagged
@@ -1193,6 +1194,28 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 4294967295
+  hoverHeight: 0
+  speed: 0
+  acceleration: 9
+  maxSpeed: 150
+  turboSpeed: 15
+  brakeSpeed: 20
+--- !u!114 &419443757122337477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419443757122337475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94c3541f8a5f39448a23d36ea56897d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carModel: {fileID: 0}
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
   hoverHeight: 0
   speed: 0
   acceleration: 9
@@ -5664,7 +5687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 90fbfcb172ff3ea45ba3c8af85b36a8a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90fbfcb172ff3ea45ba3c8af85b36a8a, type: 3}
