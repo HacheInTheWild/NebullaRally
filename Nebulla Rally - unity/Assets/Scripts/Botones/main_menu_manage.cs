@@ -17,23 +17,4 @@ public class main_menu_manage : MonoBehaviour
         
     }
 
-    public void EscenaNuevaPartida()
-    {
-        SceneManager.LoadScene("PantallaPrincipal");
-    }
-
-    public void EscenaPartidasGuardadas()
-    {
-        SceneManager.LoadScene("PartidaGuardada");
-    }
-
-    public void EscenaOpciones()
-    {
-        SceneManager.LoadScene("Opciones");
-    }
-    
-    public void Salir()
-    {
-        Application.Quit();
-    }
 }

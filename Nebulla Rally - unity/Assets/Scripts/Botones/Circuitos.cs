@@ -17,10 +17,7 @@ public class Circuitos : MonoBehaviour
         
     }
 
-    public void EscenaC1()
-    {
-        SceneManager.LoadScene("Circuito1");
-    }
+
 
     public void VolverEscena()
     {

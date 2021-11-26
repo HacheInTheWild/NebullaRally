@@ -187,12 +187,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 175964730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21dc4759d2596e744a4ffb30dc6e2864, type: 3}
+  m_Script: {fileID: 11500000, guid: aaa77f087ff9d9b4e9d32df1379b93db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1969104991}
+  slider: {fileID: 480806591}
   sliderValor: 0
-  panelBrillo: {fileID: 1471609519}
+  imagenMute: {fileID: 551917406}
 --- !u!4 &175964732
 Transform:
   m_ObjectHideFlags: 0
@@ -216,12 +216,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 175964730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4131a111cd929ce4dbcafa9f370d80c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 751e5736e12d41e458ed3c4367ec8b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 480806591}
+  slider: {fileID: 0}
   sliderValor: 0
-  imagenMute: {fileID: 551917406}
+  imagenMute: {fileID: 0}
 --- !u!114 &175964734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,12 +231,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 175964730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 988ac9f31202b9b4faf376ddb5d69acd, type: 3}
+  m_Script: {fileID: 11500000, guid: 620ad623b66501541b507d8befa567db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 1969104991}
   sliderValor: 0
-  imagenMute: {fileID: 0}
+  panelBrillo: {fileID: 1471609519}
 --- !u!1 &179737223
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 175964734}
+      - m_Target: {fileID: 175964733}
         m_TargetAssemblyTypeName: Opciones, Assembly-CSharp
         m_MethodName: VolverEscena
         m_Mode: 1
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 175964733}
+      - m_Target: {fileID: 175964731}
         m_TargetAssemblyTypeName: ControlVolumen, Assembly-CSharp
         m_MethodName: ChangeSlider
         m_Mode: 0
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7f324d52d47c2bb4d8d07d314d4a4afb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f963b166f664f5c4088e0a930f077710, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 175964731}
+      - m_Target: {fileID: 175964734}
         m_TargetAssemblyTypeName: ControlBrillo, Assembly-CSharp
         m_MethodName: ChangeSlider
         m_Mode: 0

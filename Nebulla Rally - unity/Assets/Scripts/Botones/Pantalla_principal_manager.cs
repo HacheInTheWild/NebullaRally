@@ -17,28 +17,5 @@ public class Pantalla_principal_manager : MonoBehaviour
         
     }
 
-    public void EscenaCafe()
-    {
-        SceneManager.LoadScene("Cafetería");
-    }
 
-    public void EscenaGaraje()
-    {
-        SceneManager.LoadScene("Garaje");
-    }
-
-    public void EscenaCasa()
-    {
-        SceneManager.LoadScene("Casa");
-    }
-
-    public void EscenaCircuitos()
-    {
-        SceneManager.LoadScene("Circuitos");
-    }
-
-    public void VolverEscena()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
 }

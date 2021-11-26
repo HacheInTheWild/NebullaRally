@@ -17,8 +17,5 @@ public class Cafetería : MonoBehaviour
         
     }
 
-    public void VolverEscena()
-    {
-        SceneManager.LoadScene("PantallaPrincipal");
-    }
+
 }
