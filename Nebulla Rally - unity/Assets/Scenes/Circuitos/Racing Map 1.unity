@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 596783053}
   - component: {fileID: 596783052}
   - component: {fileID: 596783051}
+  - component: {fileID: 596783055}
   m_Layer: 0
   m_Name: Cam
   m_TagString: Untagged
@@ -338,13 +339,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596783049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.34, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -92.17533, y: -309.52, z: 257.83075}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 1771885038}
-  m_Father: {fileID: 1052146262032801913}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &596783051
 MonoBehaviour:
@@ -358,10 +359,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c616ef75300942e4d91634439a9df8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SamShip: {fileID: 419443757122337475}
-  shipX: 0
-  shipY: 0
-  shipZ: 0
 --- !u!65 &596783052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -424,6 +421,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 596783049}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &596783055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596783049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb4d1b56e5255a4386ea3f2dbe16ec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 9140188651680600436}
+  distance: 3
+  height: 12
+  heightDamping: 2
+  rotationDamping: 3
 --- !u!1 &806739096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1190,16 +1204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ffa6c9d991c82a409749ccaee20a9d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carModel: {fileID: 8705381335629010948}
-  layer:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  hoverHeight: 0
-  speed: 0
-  acceleration: 9
-  maxSpeed: 150
-  turboSpeed: 15
-  brakeSpeed: 20
 --- !u!114 &419443757122337477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,7 +1216,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c3541f8a5f39448a23d36ea56897d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carModel: {fileID: 0}
+  carModel: {fileID: 8705381335629010948}
   layer:
     serializedVersion: 2
     m_Bits: 0
@@ -1756,7 +1760,6 @@ Transform:
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 9140188651680600436}
-  - {fileID: 596783050}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

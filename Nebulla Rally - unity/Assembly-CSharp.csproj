@@ -59,11 +59,11 @@
      <Compile Include="Assets\Scripts\Monedero\SistemaPuntos.cs" />
      <Compile Include="Assets\Scripts\Botones\Circuitos.cs" />
      <Compile Include="Assets\Scripts\Monedero\Moneda.cs" />
+     <Compile Include="Assets\Scripts\Camara\CameraController.cs" />
      <Compile Include="Assets\Scripts\Configuration\Opciones.cs" />
      <Compile Include="Assets\Scripts\Configuration\ControlBrillo.cs" />
      <Compile Include="Assets\Scripts\Botones\Buttons.cs" />
      <Compile Include="Assets\Scripts\Botones\Controlador1p.cs" />
-     <Compile Include="Assets\Scripts\Camara\CameraController.cs" />
      <Compile Include="Assets\Resources\Textures\para que se copie.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
