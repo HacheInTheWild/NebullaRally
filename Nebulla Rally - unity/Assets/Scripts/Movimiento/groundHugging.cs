@@ -27,7 +27,8 @@ public class groundHugging : MonoBehaviour
     Vector3 shipRot;
 
     float deltaSpeed;
-
+    public GameObject[] rcPoints;
+    
     void Start()
     {
     }
@@ -35,25 +36,42 @@ public class groundHugging : MonoBehaviour
     void Update()
     {
         // Rotate to align with terrain
-        if (Physics.Raycast(transform.position + new Vector3(0.5f, 0, 0.5f), -transform.up, out hit, Mathf.Infinity, layer))
+        /*
+        if (Physics.Raycast(transform.position + new Vector3(0.5f, 0, 0.5f), -transform.up, out hit, hoverHeight, layer))
         {
-            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, -5.5f), -transform.up, out hit2, Mathf.Infinity, layer);
-            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, 0.5f), -transform.up, out hit3, Mathf.Infinity, layer);
-            Physics.Raycast(transform.position + new Vector3(0.5f, 0, -5.5f), -transform.up, out hit4, Mathf.Infinity, layer);
+            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, -5.5f), -transform.up, out hit2, hoverHeight, layer);
+            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, 0.5f), -transform.up, out hit3, hoverHeight, layer);
+            Physics.Raycast(transform.position + new Vector3(0.5f, 0, -5.5f), -transform.up, out hit4, hoverHeight, layer);
 
             Vector3 newUp = (hit.normal + hit2.normal + hit3.normal + hit4.normal).normalized;
 
             transform.up -= (transform.up - newUp) * 0.6f;
 
-            Debug.DrawRay(transform.position, -transform.up - newUp * 10f, Color.red);
+            Debug.DrawRay(transform.position, -transform.up - newUp * hoverHeight, Color.red);
+        }*/
+        if (Physics.Raycast(rcPoints[0].transform.position, -rcPoints[0].transform.up, out hit, hoverHeight, layer)) {
+            Physics.Raycast(rcPoints[1].transform.position, -rcPoints[1].transform.up, out hit2, hoverHeight, layer);
+            Physics.Raycast(rcPoints[2].transform.position, -rcPoints[2].transform.up, out hit3, hoverHeight, layer);
+
+            Vector3 newUp = (hit.normal + hit2.normal + hit3.normal).normalized;
+
+            float wantedHeight = hoverHeight - hit.distance;
+
+            transform.up -= (transform.up - newUp) * 0.9f;
+
+            this.transform.position += new Vector3(0, wantedHeight, 0) * 0.1f;
+
+            Debug.DrawRay(rcPoints[0].transform.position, -rcPoints[0].transform.up * hoverHeight, Color.red);
+            Debug.DrawRay(rcPoints[1].transform.position, -rcPoints[1].transform.up * hoverHeight, Color.red);
+            Debug.DrawRay(rcPoints[2].transform.position, -rcPoints[2].transform.up * hoverHeight, Color.red);
         }
         else
         {
-            transform.position -= transform.up * 0.15f;
-            Debug.DrawRay(transform.position, -transform.up * 30f, Color.blue);
+            transform.position -= Vector3.up * 0.25f;
+            Debug.DrawRay(transform.position, -Vector3.up * 30f, Color.blue);
 
         }
-
+        
         // Rotate with input
         if (speed > minSpeed)
         {
@@ -108,7 +126,7 @@ public class groundHugging : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rotationAmount = turnDirection * Time.deltaTime;
-            transform.Rotate(0.0f, rotationAmount, 0.0f);
+            carModel.transform.Rotate(0.0f, rotationAmount, 0.0f);
         }
     }
 
