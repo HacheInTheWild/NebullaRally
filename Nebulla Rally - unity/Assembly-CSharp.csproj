@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Botones\Buttons.cs" />
      <Compile Include="Assets\Scripts\Botones\Controlador1p.cs" />
      <Compile Include="Assets\Resources\Textures\para que se copie.cs" />
+     <Compile Include="Assets\Scripts\Movimiento\movimientoNave.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>

@@ -28,28 +28,19 @@ public class groundHugging : MonoBehaviour
 
     float deltaSpeed;
     public GameObject[] rcPoints;
+    //public Rigidbody rb;
     
     void Start()
     {
+        //rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
+
         // Rotate to align with terrain
-        /*
-        if (Physics.Raycast(transform.position + new Vector3(0.5f, 0, 0.5f), -transform.up, out hit, hoverHeight, layer))
+        if (Physics.Raycast(rcPoints[0].transform.position, -rcPoints[0].transform.up, out hit, hoverHeight, layer))
         {
-            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, -5.5f), -transform.up, out hit2, hoverHeight, layer);
-            Physics.Raycast(transform.position + new Vector3(-0.5f, 0, 0.5f), -transform.up, out hit3, hoverHeight, layer);
-            Physics.Raycast(transform.position + new Vector3(0.5f, 0, -5.5f), -transform.up, out hit4, hoverHeight, layer);
-
-            Vector3 newUp = (hit.normal + hit2.normal + hit3.normal + hit4.normal).normalized;
-
-            transform.up -= (transform.up - newUp) * 0.6f;
-
-            Debug.DrawRay(transform.position, -transform.up - newUp * hoverHeight, Color.red);
-        }*/
-        if (Physics.Raycast(rcPoints[0].transform.position, -rcPoints[0].transform.up, out hit, hoverHeight, layer)) {
             Physics.Raycast(rcPoints[1].transform.position, -rcPoints[1].transform.up, out hit2, hoverHeight, layer);
             Physics.Raycast(rcPoints[2].transform.position, -rcPoints[2].transform.up, out hit3, hoverHeight, layer);
 
@@ -71,7 +62,8 @@ public class groundHugging : MonoBehaviour
             Debug.DrawRay(transform.position, -Vector3.up * 30f, Color.blue);
 
         }
-        
+
+
         // Rotate with input
         if (speed > minSpeed)
         {
@@ -80,17 +72,18 @@ public class groundHugging : MonoBehaviour
 
 
         // Move forward (with acceleration and deceleration
-        if (Input.GetKey(KeyCode.W) && speed < maxSpeed) {
+        if (Input.GetKey(KeyCode.W) && speed < maxSpeed)
+        {
 
             shipMovement(acceleration);
         }
-        else if(speed > minSpeed)
+        else if (speed > minSpeed)
         {
             speed -= 10.0f * Time.fixedDeltaTime;
             forwardDirection = carModel.transform.forward;
             transform.position -= forwardDirection * Time.deltaTime * speed;
         }
-        
+
         //turbo
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -104,7 +97,8 @@ public class groundHugging : MonoBehaviour
         }
 
         //tilt
-        if(speed > minSpeed) {
+        if (speed > minSpeed)
+        {
             //shipTilt();
         }
     }
@@ -166,5 +160,8 @@ public class groundHugging : MonoBehaviour
         transform.GetChild(0).Rotate(repos);
     }
     
-    
+    void FixedUpdate()
+    {
+
+    }
 }
