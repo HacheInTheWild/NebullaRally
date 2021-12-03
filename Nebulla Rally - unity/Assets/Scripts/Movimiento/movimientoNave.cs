@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class prueba : MonoBehaviour
+public class movimientoNave : MonoBehaviour
 {
     Rigidbody rb;
     Vector2 inputMov;
