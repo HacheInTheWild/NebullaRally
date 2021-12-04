@@ -5,6 +5,7 @@ using UnityEngine;
 public class movimientoNave : MonoBehaviour
 {
     Rigidbody rb;
+    Rigidbody rb2;
     Vector2 inputMov;
     Vector2 inputRot;
     public float velocidad = 10f;
@@ -28,6 +29,8 @@ public class movimientoNave : MonoBehaviour
     private RaycastHit hit5;
 
     float turnDirection;
+
+    bool existCollision = false;
 
     // Start is called before the first frame update
     void Start()
@@ -73,6 +76,12 @@ public class movimientoNave : MonoBehaviour
             var rotationAmount = turnDirection * Time.deltaTime * 80f;
             transform.Rotate(0.0f, rotationAmount, 0.0f);
         }
+        
+        // speed brake if has collide
+        if (existCollision == true && speed > brakeSpeed)
+        {
+            speed = speed - 2f;
+        }
 
         //turbo
         if (Input.GetKey(KeyCode.LeftShift))
@@ -115,4 +124,21 @@ public class movimientoNave : MonoBehaviour
     {
         GUI.Label(new Rect(20, 20, 200, 200), "rigidbody velocity: " + rb.velocity);
     }
+
+    void OnCollisionEnter( Collision other )
+    {
+        existCollision = true;
+    }
+
+    void OnCollisionExit (Collision other)
+    {
+        existCollision = false;
+    }
+
+    void OnCollisionStay(Collision other)
+    {
+        existCollision = true;
+    }
+
+
 }
