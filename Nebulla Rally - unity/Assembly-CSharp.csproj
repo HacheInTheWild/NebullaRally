@@ -49,7 +49,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Movimiento\groundHugging.cs" />
      <Compile Include="Assets\Scripts\Botones\Casa.cs" />
+     <Compile Include="Assets\Scripts\HUD\ContadorVueltas.cs" />
      <Compile Include="Assets\Scripts\Botones\Garaje.cs" />
+     <Compile Include="Assets\Scripts\HUD\CuentaAtras.cs" />
      <Compile Include="Assets\Scripts\Botones\main_menu_manage.cs" />
      <Compile Include="Assets\Scripts\Botones\partidas_manage.cs" />
      <Compile Include="Assets\Scripts\Configuration\ControlVolumen.cs" />
