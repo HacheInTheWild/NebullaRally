@@ -18,6 +18,12 @@ public class ContadorVueltas : MonoBehaviour
     void Update()
     {
         contadorVueltas.text = vueltas.ToString() + "/3";
+        if ( vueltas == 3)
+        {
+            GameObject nave = GameObject.Find("Nave");
+            nave.GetComponent<movimientoNave>().enabled = false;
+            //nave.GetComponent<movimientoNave>().speed = 0;
+        }
     }
 
     void OnTriggerEnter( Collider other)
