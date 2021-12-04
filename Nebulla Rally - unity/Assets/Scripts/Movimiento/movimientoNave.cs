@@ -27,6 +27,7 @@ public class movimientoNave : MonoBehaviour
     private RaycastHit hit3;
     private RaycastHit hit4;
     private RaycastHit hit5;
+    private Vector3 moveDirection;
 
     float turnDirection;
 
@@ -42,6 +43,7 @@ public class movimientoNave : MonoBehaviour
     void Update()
     {
         turnDirection = Input.GetAxis("Horizontal");
+        moveDirection = -transform.forward;
 
         if (Input.GetKey(KeyCode.W) && speed < maxSpeed)
         {
@@ -51,8 +53,6 @@ public class movimientoNave : MonoBehaviour
         {
             speed -= 10.0f * Time.deltaTime;
         }
-
-
     }
 
     private void FixedUpdate()
@@ -63,11 +63,11 @@ public class movimientoNave : MonoBehaviour
         // Move forward (with acceleration and deceleration)
         if (Input.GetKey(KeyCode.W) && speed < maxSpeed)
         {
-            rb.velocity = -transform.forward * speed;
+            rb.velocity = moveDirection * speed;
         }
         else if (speed > minSpeed)
         {
-            rb.velocity = -transform.forward * speed;
+            rb.velocity = moveDirection * speed;
         }
 
         // Rotate with input
@@ -104,10 +104,11 @@ public class movimientoNave : MonoBehaviour
             Vector3 newUp = (hit.normal + hit2.normal + hit3.normal).normalized;
 
             float wantedHeight = hoverHeight - hit.distance;
+            var vectprHeight = new Vector3(transform.position.x, wantedHeight, transform.position.z);
 
             transform.rotation = Quaternion.FromToRotation(transform.up, newUp) * transform.rotation;
 
-            transform.position += new Vector3(0, wantedHeight, 0) * 0.1f;
+            transform.position += new Vector3(0, wantedHeight, 0) * .1f;
 
             Debug.DrawRay(rcPoints[0].transform.position, -rcPoints[0].transform.up * hoverHeight, Color.red);
             Debug.DrawRay(rcPoints[1].transform.position, -rcPoints[1].transform.up * hoverHeight, Color.red);
@@ -118,11 +119,6 @@ public class movimientoNave : MonoBehaviour
             transform.position -= Vector3.up * 1.25f;
             Debug.DrawRay(transform.position, -Vector3.up * 30f, Color.blue);
         }
-    }
-
-    void OnGUI()
-    {
-        GUI.Label(new Rect(20, 20, 200, 200), "rigidbody velocity: " + rb.velocity);
     }
 
     void OnCollisionEnter( Collision other )
