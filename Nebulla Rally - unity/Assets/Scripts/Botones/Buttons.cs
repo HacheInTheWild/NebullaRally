@@ -35,9 +35,9 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("Casa");
     }
 
-    public void EscenaCircuitos()
+    public void EscenaSeleccionCircuitos()
     {
-        SceneManager.LoadScene("Circuitos");
+        SceneManager.LoadScene("SelectorCircuitos");
     }
 
     public void VolverEscenaPrincipal()
@@ -60,7 +60,12 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("PantallaPrincipal");
     }
 
-    public void racing()
+    public void RacingMap1()
+    {
+        SceneManager.LoadScene("Racing Map 1");
+    }
+
+    public void RacingMap2()
     {
         SceneManager.LoadScene("Racing Map 1");
     }
