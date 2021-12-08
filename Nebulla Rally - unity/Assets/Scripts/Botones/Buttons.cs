@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 public class Buttons : MonoBehaviour
 {
 
-    public void play()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
-
     public void EscenaNuevaPartida()
     {
         SceneManager.LoadScene("PantallaPrincipal");
@@ -40,7 +35,7 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("SelectorCircuitos");
     }
 
-    public void VolverEscenaPrincipal()
+    public void EscenaMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
     }
@@ -55,9 +50,9 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("Circuito1");
     }
 
-    public void VolverEscena()
+    public void EscenaMainScreen()
     {
-        SceneManager.LoadScene("PantallaPrincipal");
+        SceneManager.LoadScene("MainScreen");
     }
 
     public void RacingMap1()
