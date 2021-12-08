@@ -70,13 +70,8 @@
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_SnowOverTime.cs" />
      <Compile Include="Assets\Scripts\Configuration\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Movimiento\NewBehaviourScript.cs" />
-<<<<<<< Updated upstream
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_DissolveOverTime.cs" />
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_ExampleReview.cs" />
-=======
-     <Compile Include="Assets\Scripts\Configuration\ControlBrillo.cs" />
-     <Compile Include="Assets\Scripts\IA\ShipIAManager.cs" />
->>>>>>> Stashed changes
      <Compile Include="Assets\Scripts\Botones\Buttons.cs" />
      <Compile Include="Assets\Scripts\Botones\Controlador1p.cs" />
      <Compile Include="Assets\Resources\Textures\para que se copie.cs" />
