@@ -159,8 +159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: 91}
-  m_SizeDelta: {x: 267.3655, y: 90}
+  m_AnchoredPosition: {x: -177.79999, y: 57.5}
+  m_SizeDelta: {x: 300, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106775364
 MonoBehaviour:
@@ -335,8 +335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 189, y: 91}
-  m_SizeDelta: {x: 267.3655, y: 90}
+  m_AnchoredPosition: {x: 186.68, y: 57.500008}
+  m_SizeDelta: {x: 300, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &200213993
 MonoBehaviour:
@@ -468,8 +468,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169, y: -104}
-  m_SizeDelta: {x: 267.3655, y: 90}
+  m_AnchoredPosition: {x: -177.8, y: -115}
+  m_SizeDelta: {x: 300, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528953767
 MonoBehaviour:
@@ -639,19 +639,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66bbdefe9f025654fbb6f52ee55c1f59, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: b55559bf23eeba244a4b71e6bcdaf99e, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: atras
+  m_Text: Atras
 --- !u!222 &558503824
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -734,19 +734,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66bbdefe9f025654fbb6f52ee55c1f59, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: b55559bf23eeba244a4b71e6bcdaf99e, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: cafe
+  m_Text: "CAF\xC9"
 --- !u!222 &622755493
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -829,19 +829,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66bbdefe9f025654fbb6f52ee55c1f59, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: b55559bf23eeba244a4b71e6bcdaf99e, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: garaje
+  m_Text: GARAJE
 --- !u!222 &625729895
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -886,8 +886,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 203, y: -104}
-  m_SizeDelta: {x: 267.3655, y: 90}
+  m_AnchoredPosition: {x: 186.68, y: -107}
+  m_SizeDelta: {x: 300, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1051175488
 MonoBehaviour:
@@ -1019,8 +1019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 484, y: 247.34}
-  m_SizeDelta: {x: 189.09, y: 49.3577}
+  m_AnchoredPosition: {x: 474.47046, y: 237.47006}
+  m_SizeDelta: {x: 208.149, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135475438
 MonoBehaviour:
@@ -1175,19 +1175,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66bbdefe9f025654fbb6f52ee55c1f59, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: b55559bf23eeba244a4b71e6bcdaf99e, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleccion de circuitos
+  m_Text: "SELECCI\xD3N DE CIRCUITO"
 --- !u!222 &1139596611
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1330,8 +1330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -509, y: 247}
-  m_SizeDelta: {x: 128.2197, y: 50.0396}
+  m_AnchoredPosition: {x: -494.33926, y: 237.47052}
+  m_SizeDelta: {x: 157.5412, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1542517077
 MonoBehaviour:
@@ -1567,19 +1567,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66bbdefe9f025654fbb6f52ee55c1f59, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: b55559bf23eeba244a4b71e6bcdaf99e, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: opciones
+  m_Text: Opciones
 --- !u!222 &1736653747
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1662,19 +1662,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 66bbdefe9f025654fbb6f52ee55c1f59, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: b55559bf23eeba244a4b71e6bcdaf99e, type: 3}
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 3
-    m_MaxSize: 40
+    m_MaxSize: 45
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: casa
+  m_Text: CASA
 --- !u!222 &1932963564
 CanvasRenderer:
   m_ObjectHideFlags: 0
