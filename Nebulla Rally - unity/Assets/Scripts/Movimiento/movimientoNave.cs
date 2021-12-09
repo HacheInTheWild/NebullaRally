@@ -25,6 +25,26 @@ public class movimientoNave : MonoBehaviour
     Vector3 shipRot;
     private float rotationAmount;
 
+    //Declaro la variable de tipo GameObject que luego asociaremos a nuestro prefab Disparos
+    public GameObject disparo;
+    public GameObject bomba;
+
+    //Declaro la variable de tipo Transform para la posición del disparador
+    public Transform disparador;
+    public Transform disparadorBomba;
+
+
+    //Declaro la variable de tipo float velocidadDisparo para la velocidad con la que puedo generar disparos
+    [Range(0, 1)]
+    public float velocidadDisparo = 0.25f; //4 por segundo
+
+    //Tiempo que tiene que transcurrir hasta el próximo disparo
+    private float proximoDisparo;
+    private int disparos;
+    private int bombas;
+    private int misiles;
+    private float proximaBomba;
+
 
     bool existCollision = false;
 
@@ -37,6 +57,30 @@ public class movimientoNave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetButton("Fire1") && Time.time > proximoDisparo)
+        {
+
+            //Incremento el valor de proximo disparo
+            proximoDisparo = Time.time + velocidadDisparo;
+
+
+
+            //Instancio un nuevo disparo en esa posición y con esa rotación
+            Instantiate(disparo, disparador.position, disparador.rotation);
+        }
+
+        if (Input.GetKey(KeyCode.B) && Time.time > proximaBomba)
+        {
+
+            //Incremento el valor de proximo disparo
+            proximaBomba = Time.time + velocidadDisparo;
+
+
+
+            //Instancio un nuevo disparo en esa posición y con esa rotación
+            Instantiate(bomba, disparadorBomba.position, disparadorBomba.rotation);
+        }
+
         turnDirection = Input.GetAxis("Horizontal");
         moveDirection = -transform.forward;
 
@@ -99,7 +143,6 @@ public class movimientoNave : MonoBehaviour
         }
     }
 
-    /*
     void shipTilt()
     {
         shipRot = transform.localEulerAngles;
@@ -135,7 +178,20 @@ public class movimientoNave : MonoBehaviour
 
         transform.Rotate(repos);
     }
-    */
+
+    void OnTriggerEnter(Collider other)
+    {
+       
+        //Para que no se destruya con los límites
+        if (other.gameObject.tag == "Bala")
+        {
+            //Destruyo la bala (con la que ha chocado)
+            Destroy(other.gameObject);
+            speed = speed / 10;
+           
+
+        }
+    }
 
     void OnCollisionEnter( Collision other )
     {
