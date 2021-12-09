@@ -21,7 +21,7 @@ public class ShipIAManager : MonoBehaviour
     public GameObject[] rcPoints;
     public LayerMask layer;
     public LayerMask layer2;
-    public float hoverHeight;
+    //public float hoverHeight;
     public float distanceHeight;
 
     private RaycastHit hit;
@@ -49,11 +49,11 @@ public class ShipIAManager : MonoBehaviour
     {
         if (speed < maxSpeed)
         {
-            speed += 10.0f * Time.deltaTime;
+            speed += 1f * Time.deltaTime;
         }
         else if (speed > minSpeed)
         {
-            speed -= 10.0f * Time.deltaTime;
+            speed -= 1f * Time.deltaTime;
         }
 
     }
@@ -97,6 +97,7 @@ public class ShipIAManager : MonoBehaviour
         }
         */
 
+        /*
         // Adjust its position relative to the ground
         if (Physics.Raycast(rcPoints[0].transform.position, -rcPoints[0].transform.up, out hit, hoverHeight, layer))
         {
@@ -120,6 +121,7 @@ public class ShipIAManager : MonoBehaviour
             transform.position -= Vector3.up * 1.25f;
             Debug.DrawRay(transform.position, -Vector3.up * 30f, Color.blue);
         }
+        */
 
         // left
         if (Physics.Raycast(rcPoints[4].transform.position, -rcPoints[4].transform.forward, out hit5, distanceHeight, layer2))

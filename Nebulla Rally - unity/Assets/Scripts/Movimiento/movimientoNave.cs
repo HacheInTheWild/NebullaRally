@@ -99,6 +99,7 @@ public class movimientoNave : MonoBehaviour
         }
     }
 
+    /*
     void shipTilt()
     {
         shipRot = transform.localEulerAngles;
@@ -134,6 +135,7 @@ public class movimientoNave : MonoBehaviour
 
         transform.Rotate(repos);
     }
+    */
 
     void OnCollisionEnter( Collision other )
     {
