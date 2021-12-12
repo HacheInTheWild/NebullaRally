@@ -194,14 +194,19 @@ public class movimientoNave : MonoBehaviour
         {
             //Destruyo la bala (con la que ha chocado)
             Destroy(other.gameObject);
-            speed = speed / 10;
-           
-
+            for (int i = 0; i < speed/1.5; i++) { speed--; }
         }
+
+        if (other.gameObject.tag == "Bomba")
+        {
+            //Destruyo la bomba (con la que ha chocado)
+            Destroy(other.gameObject);
+            for (int i = 0; i < speed; i++) { speed--;}
+        }
+
         if (other.gameObject.tag == "CogerBomba") {
             contBomba += 2;
             Destroy(other.gameObject);
-
         }
 
         if (other.gameObject.tag == "CogerBala")
