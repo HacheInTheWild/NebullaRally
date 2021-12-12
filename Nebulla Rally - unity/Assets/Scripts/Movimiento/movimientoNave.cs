@@ -47,21 +47,26 @@ public class movimientoNave : MonoBehaviour
 
 
     bool existCollision = false;
+    private int contBomba;
+    private int contDisparo;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        contBomba = 0;
+        contDisparo = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > proximoDisparo)
+        if (contDisparo > 0 && Input.GetButton("Fire1") && Time.time > proximoDisparo)
         {
 
             //Incremento el valor de proximo disparo
             proximoDisparo = Time.time + velocidadDisparo;
+            contDisparo = contDisparo - 1;
 
 
 
@@ -69,11 +74,13 @@ public class movimientoNave : MonoBehaviour
             Instantiate(disparo, disparador.position, disparador.rotation);
         }
 
-        if (Input.GetKey(KeyCode.B) && Time.time > proximaBomba)
+        if (contBomba > 0 && Input.GetKey(KeyCode.B) && Time.time > proximaBomba)
         {
-
+        
             //Incremento el valor de proximo disparo
             proximaBomba = Time.time + velocidadDisparo;
+            
+            contBomba = contBomba - 1;
 
 
 
@@ -191,6 +198,18 @@ public class movimientoNave : MonoBehaviour
            
 
         }
+        if (other.gameObject.tag == "CogerBomba") {
+            contBomba += 2;
+            Destroy(other.gameObject);
+
+        }
+
+        if (other.gameObject.tag == "CogerBala")
+        {
+            contDisparo += 4;
+            Destroy(other.gameObject);
+        }
+
     }
 
     void OnCollisionEnter( Collision other )
