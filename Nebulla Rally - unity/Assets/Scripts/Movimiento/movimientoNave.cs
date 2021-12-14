@@ -5,16 +5,13 @@ using UnityEngine;
 public class movimientoNave : MonoBehaviour
 {
     Rigidbody rb;
-    Rigidbody rb2;
-    Vector2 inputMov;
-    Vector2 inputRot;
-    public float velocidad = 10f;
-    public float sensibilidad = 2;
+    
 
     public float speed = 0.0f;
     public float acceleration = 9.0f;
     public float maxSpeed = 150.0f;
     private float minSpeed = 0.0f;
+    public float rotationSpeed = 80f;
     public float turboSpeed = 15.0f;
     public float brakeSpeed = 20.0f;
 
@@ -102,40 +99,41 @@ public class movimientoNave : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            if (speed >= maxSpeed) 
-            {
-                speed += 0.00001f * Time.deltaTime;
-            }
-            else
-            {
-                speed += acceleration * Time.deltaTime;
-            }
+            
         }
         else if (speed > minSpeed)
         {
-            speed -= acceleration * Time.deltaTime;
         }
     }
 
     private void FixedUpdate()
     {
 
-        rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
-
         // Move forward (with acceleration and deceleration)
-        if (Input.GetKey(KeyCode.W) && speed < maxSpeed)
+        if (Input.GetKey(KeyCode.W))
         {
+            if (speed >= maxSpeed)
+            {
+                speed = speed;
+            }
+            else
+            {
+                speed += acceleration * Time.deltaTime;
+            }
+
             rb.velocity = moveDirection * speed;
         }
         else if (speed > minSpeed)
         {
+            speed -= acceleration * Time.deltaTime;
+
             rb.velocity = moveDirection * speed;
         }
 
         // Rotate with input
         if (speed > minSpeed)
         {
-            var rotationAmount = turnDirection * Time.deltaTime * 80f;
+            var rotationAmount = turnDirection * Time.deltaTime * rotationSpeed;
             transform.Rotate(0.0f, rotationAmount, 0.0f);
             //shipTilt();
         }

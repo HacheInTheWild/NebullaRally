@@ -33,7 +33,9 @@ public class LevitacionNave : MonoBehaviour
 
             var vectorHeight = new Vector3(transform.position.x, wantedHeight, transform.position.z);
 
-            transform.rotation = Quaternion.FromToRotation(transform.up, newUp) * transform.rotation; //keep the spaceship paralel to the ground
+
+            var aux = Quaternion.FromToRotation(transform.up, newUp) * transform.rotation;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, aux, 0.7f); //keep the spaceship paralel to the ground
 
             rb.MovePosition(transform.position + Vector3.up * wantedHeight * Time.deltaTime); //adjustment of flying height
 
