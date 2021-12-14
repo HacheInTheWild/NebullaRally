@@ -347,6 +347,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   distanceHeight: 6
+  velocidadDisparo: 0.25
+  disparo: {fileID: 4077921646125601205, guid: 9224f0c6df405c047b3a06cb0c5cb688, type: 3}
+  bomba: {fileID: 5025945954278565243, guid: e24027facd0596641a3e789f774aea79, type: 3}
+  disparador: {fileID: 1559376157}
+  disparadorBomba: {fileID: 1377402505}
 --- !u!114 &25890637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +471,8 @@ Transform:
   - {fileID: 1135466999}
   - {fileID: 567164685}
   - {fileID: 1446108462}
+  - {fileID: 1559376157}
+  - {fileID: 1377402505}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -179.504, z: 0}
@@ -6824,7 +6831,7 @@ MonoBehaviour:
   turboSpeed: 15
   brakeSpeed: 20
   disparo: {fileID: 4077921646125601205, guid: 9224f0c6df405c047b3a06cb0c5cb688, type: 3}
-  bomba: {fileID: 2935016411647256838, guid: dc0dddc81ed0e5a48bf49964da30e43f, type: 3}
+  bomba: {fileID: 5025945954278565243, guid: e24027facd0596641a3e789f774aea79, type: 3}
   disparador: {fileID: 1550814602}
   disparadorBomba: {fileID: 1265323443}
   velocidadDisparo: 0.25
@@ -24948,6 +24955,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.012989748, y: 0.013928473, z: 0.019046644}
   m_Center: {x: 0.0033129763, y: 0.0030357607, z: -0.00028452923}
+--- !u!1 &1377402504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1377402505}
+  m_Layer: 0
+  m_Name: DisparadorBomba
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1377402505
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377402504}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.0041}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 25890642}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1388531002
 GameObject:
   m_ObjectHideFlags: 0
@@ -25775,6 +25812,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25.805, y: 179.783, z: -3.792}
+--- !u!1 &1559376156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1559376157}
+  m_Layer: 0
+  m_Name: DisparadorBala
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1559376157
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559376156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0002, y: -0.0041, z: -0.0212}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 25890642}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562560510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4428312614778117577, guid: ac683101af56d364292984abd9365834, type: 3}
