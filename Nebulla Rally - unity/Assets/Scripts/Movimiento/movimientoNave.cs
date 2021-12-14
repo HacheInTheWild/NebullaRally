@@ -50,6 +50,9 @@ public class movimientoNave : MonoBehaviour
     private int contBomba;
     private int contDisparo;
 
+    private static int reducirBomba;
+    private static int reducirBala;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +64,12 @@ public class movimientoNave : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (reducirBala == 1 && speed > 50) { speed--; }
+        else {reducirBala = 0;}
+
+        if (reducirBomba == 1 && speed > 10) { speed--; }
+        else { reducirBomba = 0; }
+
         if (contDisparo > 0 && Input.GetButton("Fire1") && Time.time > proximoDisparo)
         {
 
@@ -194,14 +203,14 @@ public class movimientoNave : MonoBehaviour
         {
             //Destruyo la bala (con la que ha chocado)
             Destroy(other.gameObject);
-            for (int i = 0; i < speed/1.5; i++) { speed--; }
+            reducirBala = 1;
         }
 
         if (other.gameObject.tag == "Bomba")
         {
             //Destruyo la bomba (con la que ha chocado)
             Destroy(other.gameObject);
-            for (int i = 0; i < speed; i++) { speed--;}
+            reducirBomba = 1;
         }
 
         if (other.gameObject.tag == "CogerBomba") {

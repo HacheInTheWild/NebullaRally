@@ -51,6 +51,8 @@ public class ShipIAManager : MonoBehaviour
     //Declaro la variable de tipo Transform para la posición del disparador
     public Transform disparador;
     public Transform disparadorBomba;
+    private static int reducirBala;
+    private static int reducirBomba;
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,12 @@ public class ShipIAManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (reducirBala == 1 && speed > 50) { speed--; }
+        else { reducirBala = 0; }
+
+        if (reducirBomba == 1 && speed > 10) { speed--; }
+        else { reducirBomba = 0; } 
+
         if (contDisparo > 0 && Time.time > proximoDisparo)
         {
             //Incremento el valor de proximo disparo
@@ -229,14 +237,14 @@ public class ShipIAManager : MonoBehaviour
         {
             //Destruyo la bala (con la que ha chocado)
             Destroy(other.gameObject);
-            for (int i = 0; i < speed / 1.5; i++) { speed--; }
+            reducirBala = 1;
         }
 
         if (other.gameObject.tag == "Bomba")
         {
             //Destruyo la bomba (con la que ha chocado)
             Destroy(other.gameObject);
-            for (int i = 0; i < speed; i++) { speed--; }
+            reducirBomba = 1;
         }
 
         if (other.gameObject.tag == "CogerBomba")

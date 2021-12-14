@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     // the height we want the camera to be above the target
     public float height = 12.0f;
     // How much we 
-    public float heightDamping = 2.0f;
+    public float heightDamping = 6.0f;
     public float rotationDamping = 3.0f;
 
     void Start()
