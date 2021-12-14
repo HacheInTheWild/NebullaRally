@@ -47,13 +47,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
      <Compile Include="Assets\Scripts\Movimiento\groundHugging.cs" />
+     <Compile Include="Assets\Scripts\IA\Follower.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_MouseRotation.cs" />
      <Compile Include="Assets\Scripts\Armas\ApariciónArmas.cs" />
      <Compile Include="Assets\Scripts\Armas\Disparos.cs" />
      <Compile Include="Assets\Scripts\Botones\Casa.cs" />
      <Compile Include="Assets\Scripts\HUD\ContadorVueltas.cs" />
      <Compile Include="Assets\Scripts\Botones\Garaje.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
      <Compile Include="Assets\Scripts\HUD\Velocimetro.cs" />
      <Compile Include="Assets\Scripts\HUD\CuentaAtras.cs" />
      <Compile Include="Assets\Scripts\Botones\main_menu_manage.cs" />
@@ -72,12 +76,15 @@
      <Compile Include="Assets\Scripts\Camara\CameraController.cs" />
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_SnowOverTime.cs" />
      <Compile Include="Assets\Scripts\Configuration\PauseMenu.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
      <Compile Include="Assets\Scripts\Movimiento\NewBehaviourScript.cs" />
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_DissolveOverTime.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_ExampleReview.cs" />
      <Compile Include="Assets\Scripts\Botones\Buttons.cs" />
      <Compile Include="Assets\Scripts\Armas\Bombas.cs" />
      <Compile Include="Assets\Scripts\Botones\Controlador1p.cs" />
+     <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
      <Compile Include="Assets\Scripts\Configuration\SettingsMenu.cs" />
      <Compile Include="Assets\Scripts\Movimiento\LevitacionNave.cs" />
      <None Include="Assets\Particulas\Ultimate 10 Plus Shaders\Shaders\Edge Detection.shader" />
@@ -702,6 +709,16 @@
  </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{B016A97F-8E24-530B-D396-0C08C1422752}</Project>
+      <Name>PathCreatorEditor</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{D65C43FA-4D4F-0A90-9F59-635A136D5215}</Project>
+      <Name>PathCreator</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

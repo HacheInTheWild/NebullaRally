@@ -12,6 +12,6 @@ public class Follower : MonoBehaviour
     {
         distanceTravelled += speed * Time.deltaTime;
         transform.position = pathcreator.path.GetPointAtDistance(distanceTravelled);
-        transform.rotation = pathcreator.path.GetRotationAtDistance(distanceTravelled);
+        transform.rotation = pathcreator.path.GetRotationAtDistance(distanceTravelled); 
     }
 }
