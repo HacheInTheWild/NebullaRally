@@ -82,7 +82,7 @@ public class movimientoNave : MonoBehaviour
             Instantiate(disparo, disparador.position, disparador.rotation);
         }
 
-        if (contBomba > 0 && (Input.GetKey(KeyCode.B) || Gamepad.current.buttonWest.isPressed) && Time.time > proximaBomba)
+        if (contBomba > 0 && (Input.GetKey(KeyCode.B)) && Time.time > proximaBomba)
         {
         
             //Incremento el valor de proximo disparo
@@ -133,9 +133,9 @@ public class movimientoNave : MonoBehaviour
         }
 
         // Rotate with input
-        if (speed > minSpeed)
+        if (turnDirection != 0 &&  speed > minSpeed)
         {
-            if (turnDirection != 0 && (Input.GetKey(KeyCode.Space) || Gamepad.current.buttonEast.isPressed))
+            if ((Input.GetKey(KeyCode.Space)))
             {
                 var rotationAmount = turnDirection * Time.deltaTime * brakeRotationSpeed;
                 transform.Rotate(0.0f, rotationAmount, 0.0f);
@@ -163,7 +163,7 @@ public class movimientoNave : MonoBehaviour
         }
 
         //brake
-        if ((Input.GetKey(KeyCode.Space) || Gamepad.current.buttonEast.isPressed) && speed > minSpeed)
+        if ((Input.GetKey(KeyCode.Space)) && speed > minSpeed)
         {
             speed -= brakeSpeed * Time.deltaTime;
         }
