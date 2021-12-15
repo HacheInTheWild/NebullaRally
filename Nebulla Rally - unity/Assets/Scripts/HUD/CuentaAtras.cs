@@ -21,15 +21,25 @@ public class CuentaAtras : MonoBehaviour
     {
 
         GameObject nave = GameObject.Find("Nave");
-        nave.GetComponent<movimientoNave>().enabled = false;
+        GameObject nave1 = GameObject.Find("Nave (1)");
+        GameObject nave2 = GameObject.Find("Nave (2)");
+        GameObject nave3 = GameObject.Find("Nave (3)");
 
-        for( cuentaAtras = cuentaMAX; cuentaAtras > 0; cuentaAtras--)
+        nave.GetComponent<movimientoNave>().enabled = false;
+        nave1.GetComponent<Follower>().enabled = false;
+        nave2.GetComponent<Follower>().enabled = false;
+        nave3.GetComponent<Follower>().enabled = false;
+
+        for ( cuentaAtras = cuentaMAX; cuentaAtras > 0; cuentaAtras--)
         {
             cuentaText.text = cuentaAtras.ToString();
             yield return new WaitForSeconds(1);
         }
 
         nave.GetComponent<movimientoNave>().enabled = true;
+        nave1.GetComponent<Follower>().enabled = true;
+        nave2.GetComponent<Follower>().enabled = true;
+        nave3.GetComponent<Follower>().enabled = true;
         cuentaText.enabled = false;
     }
 }

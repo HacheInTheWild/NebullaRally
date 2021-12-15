@@ -169,63 +169,12 @@ public class ShipIAManager : MonoBehaviour
         }
         */
 
-        // left
-        if (Physics.Raycast(rcPoints[4].transform.position, -rcPoints[4].transform.forward, out hit5, distanceHeight, layer2))
-        {
-            detectionHeightL = distanceHeight - hit5.distance;
-            if (detectionHeightL < detectionHeightR)
-            {
-                Debug.DrawRay(rcPoints[4].transform.position, -rcPoints[4].transform.forward * distanceHeight, Color.red);
-                var rotar = transform.up.y * Time.deltaTime * 20.0f;
-                transform.Rotate(0.0f, rotar, 0.0f);
-                Debug.Log("He chocado a la derecha");
-            }
-            else
-            {
-                Debug.DrawRay(rcPoints[5].transform.position, -rcPoints[5].transform.forward * distanceHeight, Color.red);
-                var rotar = transform.up.y * Time.deltaTime * -20.0f;
-                transform.Rotate(0.0f, rotar, 0.0f);
-                Debug.Log("He chocado a la izquierda");
-            }
-        }
-
-        //right
-        if (Physics.Raycast(rcPoints[5].transform.position, -rcPoints[5].transform.forward, out hit6, distanceHeight, layer2))
-        {
-            detectionHeightR = distanceHeight - hit6.distance;
-            if (detectionHeightL < detectionHeightR)
-            {
-                Debug.DrawRay(rcPoints[4].transform.position, -rcPoints[4].transform.forward * distanceHeight, Color.red);
-                var rotar = transform.up.y * Time.deltaTime * 30.0f;
-                transform.Rotate(0.0f, rotar, 0.0f);
-                Debug.Log("He chocado a la derecha");
-            }
-            else
-            {
-                Debug.DrawRay(rcPoints[5].transform.position, -rcPoints[5].transform.forward * distanceHeight, Color.red);
-                var rotar = transform.up.y * Time.deltaTime * -30.0f;
-                transform.Rotate(0.0f, rotar, 0.0f);
-                Debug.Log("He chocado a la izquierda");
-            }
-        }
-
         // front
         if (Physics.Raycast(rcPoints[3].transform.position, rcPoints[3].transform.forward, out hit4, distanceHeight, layer2))
         {
             Debug.DrawRay(rcPoints[3].transform.position, rcPoints[3].transform.forward * distanceHeight, Color.red);
-            Debug.Log(transform.up);
+            speed = speed - 2;
 
-            if (Physics.Raycast(rcPoints[4].transform.position, rcPoints[4].transform.forward, out hit5, distanceHeight, layer2))
-            {
-                //transform.Rotate(0.0f, rotar, 0.0f);
-                Debug.Log("He chocado a la derecha");
-            }
-
-            if (Physics.Raycast(rcPoints[5].transform.position, rcPoints[5].transform.forward, out hit6, distanceHeight, layer2)) 
-            {
-                //transform.Rotate(0.0f, transform.up * Time.deltaTime * -5.0f, 0.0f);
-                Debug.Log("He chocado a la izquierda");
-            }
         }
 
     }
