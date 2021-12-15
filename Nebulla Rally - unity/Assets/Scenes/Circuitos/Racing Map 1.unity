@@ -6830,7 +6830,8 @@ MonoBehaviour:
   maxSpeed: 15
   rotationSpeed: 90
   turboSpeed: 15
-  brakeSpeed: 20
+  brakeSpeed: 10
+  brakeRotationSpeed: 120
   disparo: {fileID: 4077921646125601205, guid: 9224f0c6df405c047b3a06cb0c5cb688, type: 3}
   bomba: {fileID: 5025945954278565243, guid: e24027facd0596641a3e789f774aea79, type: 3}
   disparador: {fileID: 1550814602}

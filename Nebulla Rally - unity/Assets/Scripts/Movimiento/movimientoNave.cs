@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class movimientoNave : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class movimientoNave : MonoBehaviour
     public float rotationSpeed = 80f;
     public float turboSpeed = 15.0f;
     public float brakeSpeed = 20.0f;
+    public float brakeRotationSpeed = 20f;
 
     private Vector3 moveDirection;
 
@@ -80,7 +82,7 @@ public class movimientoNave : MonoBehaviour
             Instantiate(disparo, disparador.position, disparador.rotation);
         }
 
-        if (contBomba > 0 && Input.GetKey(KeyCode.B) && Time.time > proximaBomba)
+        if (contBomba > 0 && (Input.GetKey(KeyCode.B) || Gamepad.current.buttonWest.isPressed) && Time.time > proximaBomba)
         {
         
             //Incremento el valor de proximo disparo
@@ -110,7 +112,7 @@ public class movimientoNave : MonoBehaviour
     {
 
         // Move forward (with acceleration and deceleration)
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetAxis("Vertical") > 0)
         {
             if (speed >= maxSpeed)
             {
@@ -133,8 +135,18 @@ public class movimientoNave : MonoBehaviour
         // Rotate with input
         if (speed > minSpeed)
         {
-            var rotationAmount = turnDirection * Time.deltaTime * rotationSpeed;
-            transform.Rotate(0.0f, rotationAmount, 0.0f);
+            if (turnDirection != 0 && (Input.GetKey(KeyCode.Space) || Gamepad.current.buttonEast.isPressed))
+            {
+                var rotationAmount = turnDirection * Time.deltaTime * brakeRotationSpeed;
+                transform.Rotate(0.0f, rotationAmount, 0.0f);
+            }
+            else 
+            {
+                var rotationAmount = turnDirection * Time.deltaTime * rotationSpeed;
+                transform.Rotate(0.0f, rotationAmount, 0.0f);
+            }
+            
+            
             //shipTilt();
         }
         
@@ -151,7 +163,7 @@ public class movimientoNave : MonoBehaviour
         }
 
         //brake
-        if (Input.GetKey(KeyCode.Space) && speed > minSpeed)
+        if ((Input.GetKey(KeyCode.Space) || Gamepad.current.buttonEast.isPressed) && speed > minSpeed)
         {
             speed -= brakeSpeed * Time.deltaTime;
         }
