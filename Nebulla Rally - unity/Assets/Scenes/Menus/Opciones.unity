@@ -319,7 +319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1385661236}
         m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
-        m_MethodName: VolverEscenaPrincipal
+        m_MethodName: EscenaMainScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

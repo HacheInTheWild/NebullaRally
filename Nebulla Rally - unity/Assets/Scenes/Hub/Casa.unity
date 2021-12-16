@@ -242,7 +242,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 583260384}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 575b5a03717351f47b0940939e2d40ce, type: 3}
+  m_Script: {fileID: 11500000, guid: 2dcb03d9093226b49b3b1edd1fdbd625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &583260386
@@ -593,8 +593,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 583260385}
-        m_TargetAssemblyTypeName: Casa, Assembly-CSharp
-        m_MethodName: VolverEscena
+        m_TargetAssemblyTypeName: Buttons, Assembly-CSharp
+        m_MethodName: EscenaMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -755,7 +755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.3524475, y: 29.414276}
+  m_AnchoredPosition: {x: -94, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2004623779
@@ -779,7 +779,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: b55559bf23eeba244a4b71e6bcdaf99e, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -791,7 +791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Casa
+  m_Text: Proximamente
 --- !u!222 &2004623780
 CanvasRenderer:
   m_ObjectHideFlags: 0
