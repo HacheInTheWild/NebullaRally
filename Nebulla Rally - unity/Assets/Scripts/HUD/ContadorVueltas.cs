@@ -31,7 +31,7 @@ public class ContadorVueltas : MonoBehaviour
             nave.GetComponent<movimientoNave>().enabled = false;
             if (Input.GetKey(KeyCode.R))
             {
-                SceneManager.LoadScene("Racing Map 1");
+                SceneManager.LoadScene("escenaanimaciones");
             }
             //nave.GetComponent<movimientoNave>().speed = 0;
         }

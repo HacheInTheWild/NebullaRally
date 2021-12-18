@@ -57,7 +57,7 @@ public class Buttons : MonoBehaviour
 
     public void RacingMap1()
     {
-        SceneManager.LoadScene("Racing Map 1");
+        SceneManager.LoadScene("escenaanimaciones");
     }
 
     public void RacingMap2()

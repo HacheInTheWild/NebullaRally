@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menus/Opciones.unity
-    guid: 3c0832d72988cbb4793fd20b22a9f0af
-  - enabled: 1
     path: Assets/Scenes/Menus/MainScreen.unity
     guid: 32b22507b93b1484e9310699107597ac
+  - enabled: 1
+    path: Assets/Scenes/Menus/Opciones.unity
+    guid: 3c0832d72988cbb4793fd20b22a9f0af
   - enabled: 1
     path: Assets/Scenes/Hub/MainMenu.unity
     guid: 5e49b4b938bb2b347a1378cea49c7e7d
@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Circuitos/Racing Map 1.unity
     guid: 9e03e1dd44e4222448ecbb4ca462b81c
+  - enabled: 1
+    path: Assets/Scenes/Circuitos/escenaanimaciones.unity
+    guid: 4fb7b27e185ba2e44bc8c88b682f1013
   m_configObjects: {}
