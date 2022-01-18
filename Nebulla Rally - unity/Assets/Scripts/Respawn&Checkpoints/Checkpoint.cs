@@ -9,13 +9,13 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Nave>(out Nave player))
+        if (other.tag == "player")
         {
             trackCheckpoints.PlayerThroughCheckpoint(this);
         }
     }
 
-    public void SetTrackCheckpoints(TrackCheckpoints trackCheckpoints)
+    public void SetTrackCheckpoints(Tracking trackCheckpoints)
     {
         this.trackCheckpoints = trackCheckpoints;
     }

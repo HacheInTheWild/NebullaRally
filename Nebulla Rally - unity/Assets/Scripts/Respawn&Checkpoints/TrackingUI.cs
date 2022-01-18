@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrackingUI : MonoBehaviour
 {
-    [SerializeField] private TrackCheckpoints trackCheckpoints;
+    [SerializeField] private Tracking trackCheckpoints;
 
     void Start()
     {

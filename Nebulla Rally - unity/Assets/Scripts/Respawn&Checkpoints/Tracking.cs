@@ -9,24 +9,24 @@ public class Tracking : MonoBehaviour
     public event EventHandler OnPlayerCorrectCheckpoint;
     public event EventHandler OnPlayerWrongCheckpoint;
 
-    private List<CheckpointSingle> checkpointSingleList;
+    private List<Checkpoint> checkpointSingleList;
     private int nextCheckpointSingleIndex;
 
     private void Awake()
     {
-        Transform checkpointsTransform = checkpointsTransform.Find("Checkpoints");
+        Transform checkpointsTransform = transform.Find("Checkpoints");
 
         foreach(Transform checkpointSingleTransform in checkpointsTransform)
         {
-            checkpointSingleTransform checkpointSingle = checkpointSingleTransform.GetComponent<CheckpointSingle>();
+            Checkpoint checkpointSingle = checkpointSingleTransform.GetComponent<Checkpoint>();
             checkpointSingle.SetTrackCheckpoints(this);
-            checkpointSingleList.Add(checkpointSingleList);
+            checkpointSingleList.Add(checkpointSingle);
         }
 
         nextCheckpointSingleIndex = 0;
     }
 
-    public void PlayerThroughCheckpoint(CheckpointSingle checkpointSingle)
+    public void PlayerThroughCheckpoint(Checkpoint checkpointSingle)
     {
         if (checkpointSingleList.IndexOf(checkpointSingle) == nextCheckpointSingleIndex)
         {
