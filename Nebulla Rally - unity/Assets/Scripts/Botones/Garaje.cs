@@ -5,20 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class Garaje : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameObject canvas;
+    private GameObject canvasColor;
+
     void Start()
     {
-        
+        canvas = GameObject.Find("Canvas");
+        canvasColor = GameObject.Find("CanvasSk");
+        canvasColor.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PersonalizarNave()
     {
-        
+        canvas.SetActive(false);
+        canvasColor.SetActive(true);
+    }
+
+    public void VolverGaraje()
+    {
+        canvasColor.SetActive(false);
+        canvas.SetActive(true);
     }
 
     public void VolverEscena()
     {
-        SceneManager.LoadScene("PantallaPrincipal");
+        SceneManager.LoadScene("MainMenu");
     }
 }
