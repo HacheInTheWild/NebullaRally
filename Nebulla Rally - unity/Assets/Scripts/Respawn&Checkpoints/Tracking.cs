@@ -16,6 +16,7 @@ public class Tracking : MonoBehaviour
     {
         Transform checkpointsTransform = transform.Find("Checkpoints");
 
+        checkpointSingleList = new List<Checkpoint>();
         foreach(Transform checkpointSingleTransform in checkpointsTransform)
         {
             Checkpoint checkpointSingle = checkpointSingleTransform.GetComponent<Checkpoint>();
@@ -34,7 +35,6 @@ public class Tracking : MonoBehaviour
             OnPlayerCorrectCheckpoint?.Invoke(this, EventArgs.Empty);
         } else
         {
-            Debug.Log("Wrgon");
             OnPlayerWrongCheckpoint?.Invoke(this, EventArgs.Empty);
         }
 

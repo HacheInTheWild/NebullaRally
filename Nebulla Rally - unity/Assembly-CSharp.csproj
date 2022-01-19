@@ -54,6 +54,7 @@
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Scripts\U10PS_MouseRotation.cs" />
      <Compile Include="Assets\Scripts\Armas\ApariciónArmas.cs" />
      <Compile Include="Assets\Scripts\Armas\Disparos.cs" />
+     <Compile Include="Assets\Scripts\Camara\FlyThroughCam.cs" />
      <Compile Include="Assets\Scripts\Botones\Casa.cs" />
      <Compile Include="Assets\Scripts\HUD\ContadorVueltas.cs" />
      <Compile Include="Assets\Scripts\Botones\Garaje.cs" />
@@ -62,15 +63,19 @@
      <Compile Include="Assets\Scripts\HUD\CuentaAtras.cs" />
      <Compile Include="Assets\Scripts\Botones\main_menu_manage.cs" />
      <Compile Include="Assets\Scripts\Botones\partidas_manage.cs" />
+     <Compile Include="Assets\Scripts\Respawn&amp;Checkpoints\Tracking.cs" />
      <Compile Include="Assets\Particulas\Ultimate 10 Plus Shaders\Shaders\Plexus\Plexus.cs" />
      <Compile Include="Assets\Scripts\IA\ShipIAManager.cs" />
+     <Compile Include="Assets\Scripts\Configuration\SkinSelector.cs" />
      <Compile Include="Assets\Scripts\Botones\Pantalla_principal_manager.cs" />
      <Compile Include="Assets\Scripts\Botones\Cafetería.cs" />
      <Compile Include="Assets\Scripts\Botones\MenuMovement.cs" />
      <Compile Include="Assets\Scripts\Monedero\SistemaPuntos.cs" />
      <Compile Include="Assets\Scripts\Botones\Circuitos.cs" />
      <Compile Include="Assets\Scripts\Movimiento\ParticulasMotores.cs" />
+     <Compile Include="Assets\Scripts\Respawn&amp;Checkpoints\TrackingUI.cs" />
      <Compile Include="Assets\Scripts\Monedero\Moneda.cs" />
+     <Compile Include="Assets\Scripts\Respawn&amp;Checkpoints\Checkpoint.cs" />
      <Compile Include="Assets\Modelos\CircuitoTexture\Materials\movimientotextura.cs" />
      <Compile Include="Assets\Scripts\Movimiento\movimientoNave.cs" />
      <Compile Include="Assets\Scripts\Camara\CameraController.cs" />

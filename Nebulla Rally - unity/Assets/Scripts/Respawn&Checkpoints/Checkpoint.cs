@@ -9,8 +9,9 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "player")
+        if (other.CompareTag("player"))
         {
+            Debug.Log("hola");
             trackCheckpoints.PlayerThroughCheckpoint(this);
         }
     }

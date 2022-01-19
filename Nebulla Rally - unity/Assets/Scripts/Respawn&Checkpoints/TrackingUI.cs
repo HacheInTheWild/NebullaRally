@@ -9,7 +9,7 @@ public class TrackingUI : MonoBehaviour
     void Start()
     {
         trackCheckpoints.OnPlayerCorrectCheckpoint += TrackCheckpoints_OnPlayerCorrectChekpoint;
-        trackCheckpoints.OnPlayerWrongCheckpoint += TrackCheckpoints_OnPlayerCorrectChekpoint;
+        trackCheckpoints.OnPlayerWrongCheckpoint += TrackCheckpoints_OnPlayerWrongChekpoint;
 
         Hide();
     }
@@ -31,6 +31,6 @@ public class TrackingUI : MonoBehaviour
 
     public void Hide()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
