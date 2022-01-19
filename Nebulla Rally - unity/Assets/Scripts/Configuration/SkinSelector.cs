@@ -11,6 +11,7 @@ public class SkinSelector : MonoBehaviour
 
     public GameObject nave;
 
+    public GameObject cam;
 
     void Start()
     {
@@ -65,5 +66,19 @@ public class SkinSelector : MonoBehaviour
                 ShowSkin();
                 break;
         }
+    }
+
+    public void VerSkin()
+    {
+        var fly = cam.GetComponent<FlyThroughCam>();
+        if (fly.enabled == false)
+        {
+            fly.enabled = true;
+        }
+        else
+        {
+            fly.enabled = false;
+        }
+        
     }
 }

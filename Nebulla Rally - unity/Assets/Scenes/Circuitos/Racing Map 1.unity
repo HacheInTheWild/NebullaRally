@@ -3852,7 +3852,6 @@ GameObject:
   - component: {fileID: 1066683924}
   - component: {fileID: 1066683923}
   - component: {fileID: 1066683922}
-  - component: {fileID: 1066683925}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -3901,35 +3900,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1066683925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066683921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ceda4e127740da47a16561a0d478d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skin1:
-  - {fileID: 2100000, guid: 7a92bde97bc07f548ad82766a5889c65, type: 2}
-  - {fileID: 2100000, guid: 3006d05048ee5fd47883834ce2fbbc39, type: 2}
-  - {fileID: 2100000, guid: 1314b9dd4e3be0a41b35c2ea64bda71a, type: 2}
-  skin2:
-  - {fileID: 2100000, guid: e29a5d8eb0eaf8b438a36728f15f67da, type: 2}
-  - {fileID: 2100000, guid: aca1b2da530619a47b8ce39406965e09, type: 2}
-  - {fileID: 2100000, guid: 36743b8a4a387db419d0ed99e89faafb, type: 2}
-  skin3:
-  - {fileID: 2100000, guid: aa2105317f203814aab4886421945274, type: 2}
-  - {fileID: 2100000, guid: 01ee40c7aa86b5040a55585017d756ee, type: 2}
-  - {fileID: 2100000, guid: 1dcc6174c6cbbbe418c23b3c1828a5a3, type: 2}
-  skinDef:
-  - {fileID: 2100000, guid: 2494bfa187c7b5541bbd9f8b1b445e6e, type: 2}
-  - {fileID: 2100000, guid: c34133d55366d554a9781c11d04a2754, type: 2}
-  - {fileID: 2100000, guid: 7d33aae915e3f7b48980a782ba034c38, type: 2}
-  nave: {fileID: 445112593}
 --- !u!1 &1074644009 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5006161933219908473, guid: ac683101af56d364292984abd9365834, type: 3}
@@ -4531,6 +4501,66 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1275723517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275723519}
+  - component: {fileID: 1275723518}
+  m_Layer: 0
+  m_Name: SkinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1275723518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275723517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ceda4e127740da47a16561a0d478d1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skin1:
+  - {fileID: 2100000, guid: 7a92bde97bc07f548ad82766a5889c65, type: 2}
+  - {fileID: 2100000, guid: 3006d05048ee5fd47883834ce2fbbc39, type: 2}
+  - {fileID: 2100000, guid: 1314b9dd4e3be0a41b35c2ea64bda71a, type: 2}
+  skin2:
+  - {fileID: 2100000, guid: e29a5d8eb0eaf8b438a36728f15f67da, type: 2}
+  - {fileID: 2100000, guid: aca1b2da530619a47b8ce39406965e09, type: 2}
+  - {fileID: 2100000, guid: 36743b8a4a387db419d0ed99e89faafb, type: 2}
+  skin3:
+  - {fileID: 2100000, guid: aa2105317f203814aab4886421945274, type: 2}
+  - {fileID: 2100000, guid: 01ee40c7aa86b5040a55585017d756ee, type: 2}
+  - {fileID: 2100000, guid: 1dcc6174c6cbbbe418c23b3c1828a5a3, type: 2}
+  skinDef:
+  - {fileID: 2100000, guid: c34133d55366d554a9781c11d04a2754, type: 2}
+  - {fileID: 2100000, guid: 2494bfa187c7b5541bbd9f8b1b445e6e, type: 2}
+  - {fileID: 2100000, guid: 7d33aae915e3f7b48980a782ba034c38, type: 2}
+  nave: {fileID: 445112593}
+--- !u!4 &1275723519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275723517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 456.99997, y: 384.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279329130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5006161934096238047, guid: ac683101af56d364292984abd9365834, type: 3}
