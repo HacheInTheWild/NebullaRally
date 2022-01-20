@@ -18,10 +18,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Hub/Garaje.unity
     guid: 7ce1d0beadc5fff45a85c27b4d066e48
   - enabled: 1
-    path: Assets/Scenes/Hub/Casa.unity
+    path: Assets/Scenes/Hub/Cafeteria.unity
     guid: bd04d433eb1d8604f9e80c2e2ad4429b
   - enabled: 1
-    path: "Assets/Scenes/Hub/Cafeter\xEDa.unity"
+    path: Assets/Scenes/Hub/Casa.unity
     guid: 27557fa6cf1bd224c81838710e4767b0
   - enabled: 1
     path: Assets/Scenes/Circuitos/Racing Map 2.unity
