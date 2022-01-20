@@ -17,7 +17,7 @@ public class Buttons : MonoBehaviour
     }
     public void EscenaCafe()
     {
-        SceneManager.LoadScene("Cafetería");
+        SceneManager.LoadScene("Cafeteria");
     }
 
     public void EscenaGaraje()
