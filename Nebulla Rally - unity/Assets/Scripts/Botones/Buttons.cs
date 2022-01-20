@@ -42,7 +42,7 @@ public class Buttons : MonoBehaviour
 
     public void EscenaOpciones()
     {
-        SceneManager.LoadScene("Opciones");
+        SceneManager.LoadScene("crediitos");
     }
 
     public void EscenaTestMonedero()
@@ -62,7 +62,7 @@ public class Buttons : MonoBehaviour
 
     public void RacingMap2()
     {
-        SceneManager.LoadScene("Racing Map 1");
+        SceneManager.LoadScene("Ciudad");
     }
 
     public void Salir()
